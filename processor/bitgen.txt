@@ -1,0 +1,1921 @@
+
+   *** Important settings for the Xilinx Backend module ***
+
+   Synthesis top module: pipeCPU
+   FPGA part (PART): xc6slx16-3-csg324
+   Constraints file: pipeCPU.ucf
+
+nice -n 19 make -f Makefile proj-synthdir/layoutdefault/design.bit PROJNAME="proj" S="pipeCPU.vhd PM/PM.vhd ALU/ALU.vhd registers/REG.vhd tile_pic_mem/tile_pic_mem.vhd tile_mem/tile_mem.vhd RAM/RAM.vhd audio/audio.vhd audio_map_mem/audio_map_mem.vhd audio_motor/audio_motor.vhd kb_enc/kb_unit.vhd sprite_pic_mem/sprite_pic_mem.vhd VGA_motor/VGA_motor.vhd AD/AD.vhd sprite_mem/sprite_mem.vhd " U="pipeCPU.ucf" XST_OPT="" PART="xc6slx16-3-csg324" INCDIRS=""
+make[1]: Entering directory `/edu/felli675/tsea93-guitar-hero/processor'
+
+*** Synthesizing ***
+
+rm -rf proj-synthdir/xst/synth/tmpdir
+mkdir -p proj-synthdir/xst/synth/tmpdir
+rm -rf proj-synthdir/xst/synth/xst
+mkdir -p proj-synthdir/xst/synth/xst
+cd proj-synthdir/xst/synth; source /sw/xilinx/ise_12.4i/ISE_DS/settings64.sh; xst -ifn design.scr -ofn design.syr
+. /sw/xilinx/ise_12.4i/ISE_DS/EDK/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/EDK
+. /sw/xilinx/ise_12.4i/ISE_DS/ISE/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/ISE
+. /sw/xilinx/ise_12.4i/ISE_DS/PlanAhead/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/PlanAhead
+. /sw/xilinx/ise_12.4i/ISE_DS/common/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/common
+Release 12.4 - xst M.81d (lin64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to tmpdir
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> 
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "design.prj"
+
+---- Target Parameters
+Output File Name                   : "design.ngc"
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : pipeCPU
+
+=========================================================================
+
+WARNING:Xst:29 - Optimization Effort not specified
+The following parameters have been added:
+Optimization Goal                  : SPEED
+
+=========================================================================
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" into library work
+Parsing entity <pipeCPU>.
+Parsing architecture <func> of entity <pipecpu>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../PM/PM.vhd" into library work
+Parsing entity <PM>.
+Parsing architecture <func> of entity <pm>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" into library work
+Parsing entity <ALU>.
+Parsing architecture <func> of entity <alu>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../registers/REG.vhd" into library work
+Parsing entity <REG>.
+Parsing architecture <behaviour> of entity <reg>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../tile_pic_mem/tile_pic_mem.vhd" into library work
+Parsing entity <tile_pic_mem>.
+Parsing architecture <behaviour> of entity <tile_pic_mem>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../tile_mem/tile_mem.vhd" into library work
+Parsing entity <tile_mem>.
+Parsing architecture <behaviour> of entity <tile_mem>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../RAM/RAM.vhd" into library work
+Parsing entity <RAM>.
+Parsing architecture <behaviour> of entity <ram>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../audio/audio.vhd" into library work
+Parsing entity <audio>.
+Parsing architecture <behaviour> of entity <audio>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../audio_map_mem/audio_map_mem.vhd" into library work
+Parsing entity <audio_map_mem>.
+Parsing architecture <behaviour> of entity <audio_map_mem>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../audio_motor/audio_motor.vhd" into library work
+Parsing entity <audio_motor>.
+Parsing architecture <behaviour> of entity <audio_motor>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../kb_enc/kb_unit.vhd" into library work
+Parsing entity <kb_unit>.
+Parsing architecture <arc> of entity <kb_unit>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../sprite_pic_mem/sprite_pic_mem.vhd" into library work
+Parsing entity <sprite_pic_mem>.
+Parsing architecture <behaviour> of entity <sprite_pic_mem>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../VGA_motor/VGA_motor.vhd" into library work
+Parsing entity <VGA_motor>.
+Parsing architecture <behaviour> of entity <vga_motor>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../AD/AD.vhd" into library work
+Parsing entity <AD>.
+Parsing architecture <func> of entity <ad>.
+Parsing VHDL file "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../sprite_mem/sprite_mem.vhd" into library work
+Parsing entity <sprite_mem>.
+Parsing architecture <behaviour> of entity <sprite_mem>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <pipeCPU> (architecture <func>) from library <work>.
+
+Elaborating entity <PM> (architecture <func>) from library <work>.
+
+Elaborating entity <REG> (architecture <behaviour>) from library <work>.
+
+Elaborating entity <ALU> (architecture <func>) from library <work>.
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 34: op should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 36: a should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 37: a should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 38: a should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 39: a should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 40: a should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 41: a should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 42: a should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 43: a should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 44: a should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 45: a should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 46: b should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../ALU/ALU.vhd" Line 47: b should be on the sensitivity list of the process
+
+Elaborating entity <AD> (architecture <func>) from library <work>.
+
+Elaborating entity <RAM> (architecture <behaviour>) with generics from library <work>.
+
+Elaborating entity <kb_unit> (architecture <arc>) from library <work>.
+WARNING:HDLCompiler:89 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../kb_enc/kb_unit.vhd" Line 29: <kb_enc> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../kb_enc/kb_unit.vhd" Line 17: <kb_mem> remains a black-box since it has no binding entity.
+
+Elaborating entity <audio> (architecture <behaviour>) from library <work>.
+
+Elaborating entity <RAM> (architecture <behaviour>) with generics from library <work>.
+
+Elaborating entity <audio_map_mem> (architecture <behaviour>) from library <work>.
+
+Elaborating entity <audio_motor> (architecture <behaviour>) from library <work>.
+WARNING:HDLCompiler:634 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../audio/audio.vhd" Line 72: Net <addr_read[0]> does not have a driver.
+
+Elaborating entity <sprite_pic_mem> (architecture <behaviour>) from library <work>.
+
+Elaborating entity <sprite_mem> (architecture <behaviour>) from library <work>.
+
+Elaborating entity <tile_pic_mem> (architecture <behaviour>) from library <work>.
+
+Elaborating entity <tile_mem> (architecture <behaviour>) from library <work>.
+
+Elaborating entity <RAM> (architecture <behaviour>) with generics from library <work>.
+
+Elaborating entity <VGA_motor> (architecture <behaviour>) from library <work>.
+
+Elaborating entity <RAM> (architecture <behaviour>) with generics from library <work>.
+WARNING:HDLCompiler:634 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../AD/AD.vhd" Line 208: Net <KBM_read[15]> does not have a driver.
+WARNING:HDLCompiler:634 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../AD/AD.vhd" Line 209: Net <CM_read[15]> does not have a driver.
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 325: pc should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 47: ir3 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 55: ir4 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 48: ir3 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 411: alu_y should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 56: ir4 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 413: forward_res should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 415: reg_data_out_1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 417: reg_data_out_2 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 435: alu_y should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 437: alu_y should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 439: forward_res should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 441: forward_res should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 443: reg_data_out_2 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 445: reg_data_out_1 should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/xst/synth/../../../pipeCPU.vhd" Line 453: ad_data_read should be on the sensitivity list of the process
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <pipeCPU>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/pipeCPU.vhd".
+    Found 32-bit register for signal <IR1>.
+    Found 32-bit register for signal <IR2>.
+    Found 32-bit register for signal <IR3>.
+    Found 14-bit register for signal <IR4<31:18>>.
+    Found 10-bit register for signal <forward_res<9:0>>.
+    Found 10-bit register for signal <PC>.
+    Found 10-bit adder for signal <PC[9]_GND_4_o_add_13_OUT> created at line 1241.
+    Found 10-bit subtractor for signal <GND_4_o_GND_4_o_sub_12_OUT<9:0>> created at line 1308.
+    Found 64x4-bit Read Only RAM for signal <ALU_OP>
+    Found 64x1-bit Read Only RAM for signal <REG_we_1>
+    Found 8-bit comparator equal for signal <IR2[17]_IR3[25]_equal_82_o> created at line 410
+    Found 8-bit comparator equal for signal <IR2[17]_IR4[25]_equal_83_o> created at line 412
+    Found 8-bit comparator equal for signal <IR2[9]_IR3[25]_equal_118_o> created at line 434
+    Found 8-bit comparator equal for signal <IR2[25]_IR3[25]_equal_120_o> created at line 436
+    Found 8-bit comparator equal for signal <IR2[9]_IR4[25]_equal_122_o> created at line 438
+    Found 8-bit comparator equal for signal <IR2[25]_IR4[25]_equal_124_o> created at line 440
+    Summary:
+	inferred   2 RAM(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred 130 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred  25 Multiplexer(s).
+Unit <pipeCPU> synthesized.
+
+Synthesizing Unit <PM>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/PM/PM.vhd".
+WARNING:Xst:647 - Input <addr<9:7>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 128x32-bit Read Only RAM for signal <data_out>
+    Summary:
+	inferred   1 RAM(s).
+Unit <PM> synthesized.
+
+Synthesizing Unit <REG>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/registers/REG.vhd".
+WARNING:Xst:647 - Input <addr_read_1<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <addr_write_1<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <addr_read_2<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <addr_write_2<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 10-bit register for signal <REG_content<1>>.
+    Found 10-bit register for signal <REG_content<2>>.
+    Found 10-bit register for signal <REG_content<3>>.
+    Found 10-bit register for signal <REG_content<4>>.
+    Found 10-bit register for signal <REG_content<5>>.
+    Found 10-bit register for signal <REG_content<6>>.
+    Found 10-bit register for signal <REG_content<7>>.
+    Found 10-bit register for signal <REG_content<8>>.
+    Found 10-bit register for signal <REG_content<9>>.
+    Found 10-bit register for signal <REG_content<10>>.
+    Found 10-bit register for signal <REG_content<11>>.
+    Found 10-bit register for signal <REG_content<12>>.
+    Found 10-bit register for signal <REG_content<13>>.
+    Found 10-bit register for signal <REG_content<14>>.
+    Found 10-bit register for signal <REG_content<15>>.
+    Found 10-bit register for signal <REG_content<16>>.
+    Found 10-bit register for signal <REG_content<17>>.
+    Found 10-bit register for signal <REG_content<18>>.
+    Found 10-bit register for signal <REG_content<19>>.
+    Found 10-bit register for signal <REG_content<20>>.
+    Found 10-bit register for signal <REG_content<21>>.
+    Found 10-bit register for signal <REG_content<22>>.
+    Found 10-bit register for signal <REG_content<23>>.
+    Found 10-bit register for signal <REG_content<24>>.
+    Found 10-bit register for signal <REG_content<25>>.
+    Found 10-bit register for signal <REG_content<26>>.
+    Found 10-bit register for signal <REG_content<27>>.
+    Found 10-bit register for signal <REG_content<28>>.
+    Found 10-bit register for signal <REG_content<29>>.
+    Found 10-bit register for signal <REG_content<30>>.
+    Found 10-bit register for signal <REG_content<31>>.
+    Found 10-bit register for signal <data_out_1>.
+    Found 10-bit register for signal <data_out_2>.
+    Found 10-bit register for signal <REG_content<0>>.
+INFO:Xst:3019 - HDL ADVISOR - 320 flip-flops were inferred for signal <REG_content>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+INFO:Xst:3019 - HDL ADVISOR - 320 flip-flops were inferred for signal <REG_content>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Found 10-bit 32-to-1 multiplexer for signal <addr_read_1[4]_REG_content[31][9]_wide_mux_162_OUT> created at line 45.
+    Found 10-bit 32-to-1 multiplexer for signal <addr_read_2[4]_REG_content[31][9]_wide_mux_163_OUT> created at line 46.
+    Summary:
+	inferred 340 D-type flip-flop(s).
+	inferred  98 Multiplexer(s).
+Unit <REG> synthesized.
+
+Synthesizing Unit <ALU>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/ALU/ALU.vhd".
+    Found 1-bit register for signal <Z>.
+    Found 1-bit register for signal <N>.
+    Found 1-bit register for signal <C>.
+    Found 1-bit register for signal <V>.
+    Found 16-bit register for signal <Y>.
+    Found 16-bit register for signal <H>.
+    Found 17-bit adder for signal <GND_7_o_GND_7_o_add_0_OUT> created at line 36.
+    Found 17-bit subtractor for signal <GND_7_o_GND_7_o_sub_2_OUT<16:0>> created at line 37.
+    Found 16x16-bit multiplier for signal <A[15]_B[15]_MuLt_2_OUT> created at line 38.
+    Found 16x16-bit multiplier for signal <A[15]_B[15]_MuLt_3_OUT> created at line 39.
+    Found 16-bit shifter logical left for signal <A[15]_B[15]_shift_left_7_OUT> created at line 43
+    Found 16-bit shifter logical right for signal <A[15]_B[15]_shift_right_8_OUT> created at line 44
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[15]_Mux_42_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[14]_Mux_44_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[13]_Mux_46_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[12]_Mux_48_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[11]_Mux_50_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[10]_Mux_52_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[9]_Mux_54_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[8]_Mux_56_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[7]_Mux_58_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[6]_Mux_60_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[5]_Mux_62_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[4]_Mux_64_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[3]_Mux_66_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[2]_Mux_68_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[1]_Mux_70_o> created at line 34.
+    Found 1-bit 13-to-1 multiplexer for signal <OP[3]_R[0]_Mux_72_o> created at line 34.
+    Found 1-bit 4-to-1 multiplexer for signal <_n0187> created at line 25.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<30>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<29>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<28>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<27>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<26>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<25>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<24>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<23>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<22>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<21>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<20>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<19>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<18>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<17>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<16>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<15>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<14>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<13>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<12>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<11>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<10>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <R<31>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   2 Multiplier(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  36 D-type flip-flop(s).
+	inferred  32 Latch(s).
+	inferred  72 Multiplexer(s).
+	inferred   2 Combinational logic shifter(s).
+Unit <ALU> synthesized.
+
+Synthesizing Unit <AD>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/AD/AD.vhd".
+WARNING:Xst:2935 - Signal 'KBM_read<15:1>', unconnected in block 'AD', is tied to its initial value (000000000000000).
+WARNING:Xst:2935 - Signal 'CM_read<15:1>', unconnected in block 'AD', is tied to its initial value (000000000000000).
+    Found 10-bit subtractor for signal <GND_44_o_GND_44_o_sub_1_OUT<9:0>> created at line 347.
+    Found 10-bit subtractor for signal <GND_44_o_GND_44_o_sub_3_OUT<9:0>> created at line 348.
+    Found 10-bit subtractor for signal <GND_44_o_GND_44_o_sub_5_OUT<9:0>> created at line 349.
+    Found 10-bit subtractor for signal <GND_44_o_GND_44_o_sub_7_OUT<9:0>> created at line 350.
+    Found 10-bit subtractor for signal <GND_44_o_GND_44_o_sub_9_OUT<9:0>> created at line 351.
+    Found 10-bit subtractor for signal <GND_44_o_GND_44_o_sub_11_OUT<9:0>> created at line 352.
+    Found 10-bit subtractor for signal <GND_44_o_GND_44_o_sub_13_OUT<9:0>> created at line 353.
+    Found 10-bit subtractor for signal <GND_44_o_GND_44_o_sub_15_OUT<9:0>> created at line 354.
+    Found 10-bit comparator lessequal for signal <n0018> created at line 359
+    Found 10-bit comparator lessequal for signal <n0020> created at line 360
+    Found 10-bit comparator lessequal for signal <n0022> created at line 361
+    Found 10-bit comparator lessequal for signal <n0024> created at line 361
+    Found 10-bit comparator lessequal for signal <n0027> created at line 362
+    Found 10-bit comparator lessequal for signal <n0029> created at line 363
+    Found 10-bit comparator lessequal for signal <n0031> created at line 363
+    Found 10-bit comparator lessequal for signal <n0034> created at line 364
+    Found 10-bit comparator lessequal for signal <n0036> created at line 364
+    Found 10-bit comparator lessequal for signal <n0039> created at line 365
+    Found 10-bit comparator lessequal for signal <n0041> created at line 365
+    Found 10-bit comparator lessequal for signal <n0044> created at line 366
+    Found 10-bit comparator lessequal for signal <n0046> created at line 366
+    Found 10-bit comparator lessequal for signal <n0049> created at line 367
+    Found 10-bit comparator lessequal for signal <n0051> created at line 367
+    Summary:
+	inferred   8 Adder/Subtractor(s).
+	inferred  15 Comparator(s).
+	inferred  11 Multiplexer(s).
+Unit <AD> synthesized.
+
+Synthesizing Unit <RAM_1>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/RAM/RAM.vhd".
+        addr_width = 10
+        data_width = 16
+        length = 127
+    Found 16-bit register for signal <RAM_content<1>>.
+    Found 16-bit register for signal <RAM_content<2>>.
+    Found 16-bit register for signal <RAM_content<3>>.
+    Found 16-bit register for signal <RAM_content<4>>.
+    Found 16-bit register for signal <RAM_content<5>>.
+    Found 16-bit register for signal <RAM_content<6>>.
+    Found 16-bit register for signal <RAM_content<7>>.
+    Found 16-bit register for signal <RAM_content<8>>.
+    Found 16-bit register for signal <RAM_content<9>>.
+    Found 16-bit register for signal <RAM_content<10>>.
+    Found 16-bit register for signal <RAM_content<11>>.
+    Found 16-bit register for signal <RAM_content<12>>.
+    Found 16-bit register for signal <RAM_content<13>>.
+    Found 16-bit register for signal <RAM_content<14>>.
+    Found 16-bit register for signal <RAM_content<15>>.
+    Found 16-bit register for signal <RAM_content<16>>.
+    Found 16-bit register for signal <RAM_content<17>>.
+    Found 16-bit register for signal <RAM_content<18>>.
+    Found 16-bit register for signal <RAM_content<19>>.
+    Found 16-bit register for signal <RAM_content<20>>.
+    Found 16-bit register for signal <RAM_content<21>>.
+    Found 16-bit register for signal <RAM_content<22>>.
+    Found 16-bit register for signal <RAM_content<23>>.
+    Found 16-bit register for signal <RAM_content<24>>.
+    Found 16-bit register for signal <RAM_content<25>>.
+    Found 16-bit register for signal <RAM_content<26>>.
+    Found 16-bit register for signal <RAM_content<27>>.
+    Found 16-bit register for signal <RAM_content<28>>.
+    Found 16-bit register for signal <RAM_content<29>>.
+    Found 16-bit register for signal <RAM_content<30>>.
+    Found 16-bit register for signal <RAM_content<31>>.
+    Found 16-bit register for signal <RAM_content<32>>.
+    Found 16-bit register for signal <RAM_content<33>>.
+    Found 16-bit register for signal <RAM_content<34>>.
+    Found 16-bit register for signal <RAM_content<35>>.
+    Found 16-bit register for signal <RAM_content<36>>.
+    Found 16-bit register for signal <RAM_content<37>>.
+    Found 16-bit register for signal <RAM_content<38>>.
+    Found 16-bit register for signal <RAM_content<39>>.
+    Found 16-bit register for signal <RAM_content<40>>.
+    Found 16-bit register for signal <RAM_content<41>>.
+    Found 16-bit register for signal <RAM_content<42>>.
+    Found 16-bit register for signal <RAM_content<43>>.
+    Found 16-bit register for signal <RAM_content<44>>.
+    Found 16-bit register for signal <RAM_content<45>>.
+    Found 16-bit register for signal <RAM_content<46>>.
+    Found 16-bit register for signal <RAM_content<47>>.
+    Found 16-bit register for signal <RAM_content<48>>.
+    Found 16-bit register for signal <RAM_content<49>>.
+    Found 16-bit register for signal <RAM_content<50>>.
+    Found 16-bit register for signal <RAM_content<51>>.
+    Found 16-bit register for signal <RAM_content<52>>.
+    Found 16-bit register for signal <RAM_content<53>>.
+    Found 16-bit register for signal <RAM_content<54>>.
+    Found 16-bit register for signal <RAM_content<55>>.
+    Found 16-bit register for signal <RAM_content<56>>.
+    Found 16-bit register for signal <RAM_content<57>>.
+    Found 16-bit register for signal <RAM_content<58>>.
+    Found 16-bit register for signal <RAM_content<59>>.
+    Found 16-bit register for signal <RAM_content<60>>.
+    Found 16-bit register for signal <RAM_content<61>>.
+    Found 16-bit register for signal <RAM_content<62>>.
+    Found 16-bit register for signal <RAM_content<63>>.
+    Found 16-bit register for signal <RAM_content<64>>.
+    Found 16-bit register for signal <RAM_content<65>>.
+    Found 16-bit register for signal <RAM_content<66>>.
+    Found 16-bit register for signal <RAM_content<67>>.
+    Found 16-bit register for signal <RAM_content<68>>.
+    Found 16-bit register for signal <RAM_content<69>>.
+    Found 16-bit register for signal <RAM_content<70>>.
+    Found 16-bit register for signal <RAM_content<71>>.
+    Found 16-bit register for signal <RAM_content<72>>.
+    Found 16-bit register for signal <RAM_content<73>>.
+    Found 16-bit register for signal <RAM_content<74>>.
+    Found 16-bit register for signal <RAM_content<75>>.
+    Found 16-bit register for signal <RAM_content<76>>.
+    Found 16-bit register for signal <RAM_content<77>>.
+    Found 16-bit register for signal <RAM_content<78>>.
+    Found 16-bit register for signal <RAM_content<79>>.
+    Found 16-bit register for signal <RAM_content<80>>.
+    Found 16-bit register for signal <RAM_content<81>>.
+    Found 16-bit register for signal <RAM_content<82>>.
+    Found 16-bit register for signal <RAM_content<83>>.
+    Found 16-bit register for signal <RAM_content<84>>.
+    Found 16-bit register for signal <RAM_content<85>>.
+    Found 16-bit register for signal <RAM_content<86>>.
+    Found 16-bit register for signal <RAM_content<87>>.
+    Found 16-bit register for signal <RAM_content<88>>.
+    Found 16-bit register for signal <RAM_content<89>>.
+    Found 16-bit register for signal <RAM_content<90>>.
+    Found 16-bit register for signal <RAM_content<91>>.
+    Found 16-bit register for signal <RAM_content<92>>.
+    Found 16-bit register for signal <RAM_content<93>>.
+    Found 16-bit register for signal <RAM_content<94>>.
+    Found 16-bit register for signal <RAM_content<95>>.
+    Found 16-bit register for signal <RAM_content<96>>.
+    Found 16-bit register for signal <RAM_content<97>>.
+    Found 16-bit register for signal <RAM_content<98>>.
+    Found 16-bit register for signal <RAM_content<99>>.
+    Found 16-bit register for signal <RAM_content<100>>.
+    Found 16-bit register for signal <RAM_content<101>>.
+    Found 16-bit register for signal <RAM_content<102>>.
+    Found 16-bit register for signal <RAM_content<103>>.
+    Found 16-bit register for signal <RAM_content<104>>.
+    Found 16-bit register for signal <RAM_content<105>>.
+    Found 16-bit register for signal <RAM_content<106>>.
+    Found 16-bit register for signal <RAM_content<107>>.
+    Found 16-bit register for signal <RAM_content<108>>.
+    Found 16-bit register for signal <RAM_content<109>>.
+    Found 16-bit register for signal <RAM_content<110>>.
+    Found 16-bit register for signal <RAM_content<111>>.
+    Found 16-bit register for signal <RAM_content<112>>.
+    Found 16-bit register for signal <RAM_content<113>>.
+    Found 16-bit register for signal <RAM_content<114>>.
+    Found 16-bit register for signal <RAM_content<115>>.
+    Found 16-bit register for signal <RAM_content<116>>.
+    Found 16-bit register for signal <RAM_content<117>>.
+    Found 16-bit register for signal <RAM_content<118>>.
+    Found 16-bit register for signal <RAM_content<119>>.
+    Found 16-bit register for signal <RAM_content<120>>.
+    Found 16-bit register for signal <RAM_content<121>>.
+    Found 16-bit register for signal <RAM_content<122>>.
+    Found 16-bit register for signal <RAM_content<123>>.
+    Found 16-bit register for signal <RAM_content<124>>.
+    Found 16-bit register for signal <RAM_content<125>>.
+    Found 16-bit register for signal <RAM_content<126>>.
+    Found 16-bit register for signal <RAM_content<0>>.
+INFO:Xst:3019 - HDL ADVISOR - 2048 flip-flops were inferred for signal <RAM_content>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Found 16-bit 127-to-1 multiplexer for signal <addr_read[6]_X_41_o_wide_mux_638_OUT> created at line 52.
+    Found 10-bit comparator greater for signal <addr_write[9]_GND_45_o_LessThan_1_o> created at line 44
+    Found 10-bit comparator greater for signal <addr_read[9]_GND_45_o_LessThan_638_o> created at line 52
+    Summary:
+	inferred 2032 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <RAM_1> synthesized.
+
+Synthesizing Unit <kb_unit>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/kb_enc/kb_unit.vhd".
+    Summary:
+	no macro.
+Unit <kb_unit> synthesized.
+
+Synthesizing Unit <audio>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/audio/audio.vhd".
+WARNING:Xst:653 - Signal <addr_read> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <audio> synthesized.
+
+Synthesizing Unit <RAM_2>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/RAM/RAM.vhd".
+        addr_width = 1
+        data_width = 3
+        length = 1
+    Found 3-bit register for signal <data_read>.
+    Found 1-bit comparator greater for signal <addr_write[0]_PWR_48_o_LessThan_1_o> created at line 44
+    Summary:
+	inferred   3 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <RAM_2> synthesized.
+
+Synthesizing Unit <audio_map_mem>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/audio_map_mem/audio_map_mem.vhd".
+WARNING:Xst:2999 - Signal 'audio_mem_content', unconnected in block 'audio_map_mem', is tied to its initial value.
+    Found 8x12-bit single-port Read Only RAM <Mram_audio_mem_content> for signal <audio_mem_content>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <audio_map_mem> synthesized.
+
+Synthesizing Unit <audio_motor>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/audio_motor/audio_motor.vhd".
+    Found 16-bit register for signal <inner_counter>.
+    Found 12-bit register for signal <outer_counter>.
+    Found 12-bit adder for signal <outer_counter[11]_GND_50_o_add_3_OUT> created at line 1241.
+    Found 16-bit adder for signal <inner_counter[15]_GND_50_o_add_5_OUT> created at line 1241.
+    Found 12-bit subtractor for signal <GND_50_o_GND_50_o_sub_13_OUT<11:0>> created at line 1308.
+    Found 12-bit subtractor for signal <GND_50_o_GND_50_o_sub_15_OUT<11:0>> created at line 1308.
+    Found 16-bit comparator greater for signal <n0000> created at line 30
+    Found 12-bit comparator lessequal for signal <n0002> created at line 32
+    Found 12-bit comparator lessequal for signal <n0013> created at line 43
+    Found 12-bit comparator lessequal for signal <n0016> created at line 43
+    Summary:
+	inferred   4 Adder/Subtractor(s).
+	inferred  28 D-type flip-flop(s).
+	inferred   4 Comparator(s).
+Unit <audio_motor> synthesized.
+
+Synthesizing Unit <sprite_pic_mem>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/sprite_pic_mem/sprite_pic_mem.vhd".
+WARNING:Xst:647 - Input <pixel_x<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pixel_y<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 8-bit register for signal <sprite_x_mem<1>>.
+    Found 8-bit register for signal <sprite_x_mem<2>>.
+    Found 8-bit register for signal <sprite_x_mem<3>>.
+    Found 8-bit register for signal <sprite_x_mem<4>>.
+    Found 8-bit register for signal <sprite_x_mem<5>>.
+    Found 8-bit register for signal <sprite_x_mem<6>>.
+    Found 8-bit register for signal <sprite_x_mem<7>>.
+    Found 8-bit register for signal <sprite_x_mem<8>>.
+    Found 8-bit register for signal <sprite_x_mem<9>>.
+    Found 8-bit register for signal <sprite_x_mem<10>>.
+    Found 8-bit register for signal <sprite_x_mem<11>>.
+    Found 8-bit register for signal <sprite_x_mem<12>>.
+    Found 8-bit register for signal <sprite_x_mem<13>>.
+    Found 8-bit register for signal <sprite_x_mem<14>>.
+    Found 8-bit register for signal <sprite_x_mem<15>>.
+    Found 8-bit register for signal <sprite_x_mem<16>>.
+    Found 8-bit register for signal <sprite_x_mem<17>>.
+    Found 8-bit register for signal <sprite_x_mem<18>>.
+    Found 8-bit register for signal <sprite_x_mem<19>>.
+    Found 8-bit register for signal <sprite_x_mem<20>>.
+    Found 8-bit register for signal <sprite_x_mem<21>>.
+    Found 8-bit register for signal <sprite_x_mem<22>>.
+    Found 8-bit register for signal <sprite_x_mem<23>>.
+    Found 8-bit register for signal <sprite_x_mem<24>>.
+    Found 8-bit register for signal <sprite_x_mem<25>>.
+    Found 8-bit register for signal <sprite_x_mem<26>>.
+    Found 8-bit register for signal <sprite_x_mem<27>>.
+    Found 8-bit register for signal <sprite_x_mem<28>>.
+    Found 8-bit register for signal <sprite_x_mem<29>>.
+    Found 8-bit register for signal <sprite_x_mem<30>>.
+    Found 8-bit register for signal <sprite_x_mem<31>>.
+    Found 8-bit register for signal <sprite_y_mem<0>>.
+    Found 8-bit register for signal <sprite_y_mem<1>>.
+    Found 8-bit register for signal <sprite_y_mem<2>>.
+    Found 8-bit register for signal <sprite_y_mem<3>>.
+    Found 8-bit register for signal <sprite_y_mem<4>>.
+    Found 8-bit register for signal <sprite_y_mem<5>>.
+    Found 8-bit register for signal <sprite_y_mem<6>>.
+    Found 8-bit register for signal <sprite_y_mem<7>>.
+    Found 8-bit register for signal <sprite_y_mem<8>>.
+    Found 8-bit register for signal <sprite_y_mem<9>>.
+    Found 8-bit register for signal <sprite_y_mem<10>>.
+    Found 8-bit register for signal <sprite_y_mem<11>>.
+    Found 8-bit register for signal <sprite_y_mem<12>>.
+    Found 8-bit register for signal <sprite_y_mem<13>>.
+    Found 8-bit register for signal <sprite_y_mem<14>>.
+    Found 8-bit register for signal <sprite_y_mem<15>>.
+    Found 8-bit register for signal <sprite_y_mem<16>>.
+    Found 8-bit register for signal <sprite_y_mem<17>>.
+    Found 8-bit register for signal <sprite_y_mem<18>>.
+    Found 8-bit register for signal <sprite_y_mem<19>>.
+    Found 8-bit register for signal <sprite_y_mem<20>>.
+    Found 8-bit register for signal <sprite_y_mem<21>>.
+    Found 8-bit register for signal <sprite_y_mem<22>>.
+    Found 8-bit register for signal <sprite_y_mem<23>>.
+    Found 8-bit register for signal <sprite_y_mem<24>>.
+    Found 8-bit register for signal <sprite_y_mem<25>>.
+    Found 8-bit register for signal <sprite_y_mem<26>>.
+    Found 8-bit register for signal <sprite_y_mem<27>>.
+    Found 8-bit register for signal <sprite_y_mem<28>>.
+    Found 8-bit register for signal <sprite_y_mem<29>>.
+    Found 8-bit register for signal <sprite_y_mem<30>>.
+    Found 8-bit register for signal <sprite_y_mem<31>>.
+    Found 3-bit register for signal <sprite_num_mem<0>>.
+    Found 3-bit register for signal <sprite_num_mem<1>>.
+    Found 3-bit register for signal <sprite_num_mem<2>>.
+    Found 3-bit register for signal <sprite_num_mem<3>>.
+    Found 3-bit register for signal <sprite_num_mem<4>>.
+    Found 3-bit register for signal <sprite_num_mem<5>>.
+    Found 3-bit register for signal <sprite_num_mem<6>>.
+    Found 3-bit register for signal <sprite_num_mem<7>>.
+    Found 3-bit register for signal <sprite_num_mem<8>>.
+    Found 3-bit register for signal <sprite_num_mem<9>>.
+    Found 3-bit register for signal <sprite_num_mem<10>>.
+    Found 3-bit register for signal <sprite_num_mem<11>>.
+    Found 3-bit register for signal <sprite_num_mem<12>>.
+    Found 3-bit register for signal <sprite_num_mem<13>>.
+    Found 3-bit register for signal <sprite_num_mem<14>>.
+    Found 3-bit register for signal <sprite_num_mem<15>>.
+    Found 3-bit register for signal <sprite_num_mem<16>>.
+    Found 3-bit register for signal <sprite_num_mem<17>>.
+    Found 3-bit register for signal <sprite_num_mem<18>>.
+    Found 3-bit register for signal <sprite_num_mem<19>>.
+    Found 3-bit register for signal <sprite_num_mem<20>>.
+    Found 3-bit register for signal <sprite_num_mem<21>>.
+    Found 3-bit register for signal <sprite_num_mem<22>>.
+    Found 3-bit register for signal <sprite_num_mem<23>>.
+    Found 3-bit register for signal <sprite_num_mem<24>>.
+    Found 3-bit register for signal <sprite_num_mem<25>>.
+    Found 3-bit register for signal <sprite_num_mem<26>>.
+    Found 3-bit register for signal <sprite_num_mem<27>>.
+    Found 3-bit register for signal <sprite_num_mem<28>>.
+    Found 3-bit register for signal <sprite_num_mem<29>>.
+    Found 3-bit register for signal <sprite_num_mem<30>>.
+    Found 3-bit register for signal <sprite_num_mem<31>>.
+    Found 9-bit register for signal <sprite_mem_index>.
+    Found 1-bit register for signal <sprite_at_pixel>.
+    Found 1-bit register for signal <sprite_collision>.
+    Found 8-bit register for signal <sprite_x_mem<0>>.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_388_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_389_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_394_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_395_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_401_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_402_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_408_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_409_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_415_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_416_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_422_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_423_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_429_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_430_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_436_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_437_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_443_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_444_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_450_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_451_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_457_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_458_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_464_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_465_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_471_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_472_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_478_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_479_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_485_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_486_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_492_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_493_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_499_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_500_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_506_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_507_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_513_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_514_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_520_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_521_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_527_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_528_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_534_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_535_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_541_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_542_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_548_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_549_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_555_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_556_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_562_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_563_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_569_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_570_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_576_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_577_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_583_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_584_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_590_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_591_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_597_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_598_OUT<7:0>> created at line 110.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_604_OUT<7:0>> created at line 109.
+    Found 8-bit subtractor for signal <GND_51_o_GND_51_o_sub_605_OUT<7:0>> created at line 110.
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_390_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_391_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_396_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_397_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_403_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_404_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_410_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_411_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_417_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_418_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_424_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_425_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_431_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_432_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_438_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_439_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_445_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_446_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_452_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_453_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_459_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_460_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_466_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_467_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_473_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_474_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_480_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_481_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_487_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_488_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_494_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_495_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_501_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_502_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_508_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_509_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_515_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_516_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_522_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_523_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_529_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_530_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_536_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_537_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_543_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_544_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_550_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_551_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_557_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_558_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_564_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_565_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_571_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_572_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_578_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_579_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_585_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_586_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_592_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_593_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_599_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_600_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_606_o> created at line 112
+    Found 8-bit comparator greater for signal <GND_51_o_GND_51_o_LessThan_607_o> created at line 112
+    Summary:
+	inferred  64 Adder/Subtractor(s).
+	inferred 619 D-type flip-flop(s).
+	inferred  64 Comparator(s).
+	inferred 183 Multiplexer(s).
+Unit <sprite_pic_mem> synthesized.
+
+Synthesizing Unit <sprite_mem>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/sprite_mem/sprite_mem.vhd".
+WARNING:Xst:2999 - Signal 'sprite_mem_content', unconnected in block 'sprite_mem', is tied to its initial value.
+    Found 512x8-bit single-port Read Only RAM <Mram_sprite_mem_content> for signal <sprite_mem_content>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <sprite_mem> synthesized.
+
+Synthesizing Unit <tile_pic_mem>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/tile_pic_mem/tile_pic_mem.vhd".
+WARNING:Xst:647 - Input <pixel_x<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pixel_y<9:9>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <pixel_y<1:0>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 9-bit adder for signal <tile_addr_read> created at line 64.
+    Found 5x4-bit multiplier for signal <n0016> created at line 64.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   1 Adder/Subtractor(s).
+Unit <tile_pic_mem> synthesized.
+
+Synthesizing Unit <tile_mem>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/tile_mem/tile_mem.vhd".
+WARNING:Xst:2999 - Signal 'tile_mem_content', unconnected in block 'tile_mem', is tied to its initial value.
+    Found 2048x8-bit single-port Read Only RAM <Mram_tile_mem_content> for signal <tile_mem_content>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <tile_mem> synthesized.
+
+Synthesizing Unit <RAM_3>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/RAM/RAM.vhd".
+        addr_width = 9
+        data_width = 5
+        length = 300
+    Found 5-bit register for signal <RAM_content<1>>.
+    Found 5-bit register for signal <RAM_content<2>>.
+    Found 5-bit register for signal <RAM_content<3>>.
+    Found 5-bit register for signal <RAM_content<4>>.
+    Found 5-bit register for signal <RAM_content<5>>.
+    Found 5-bit register for signal <RAM_content<6>>.
+    Found 5-bit register for signal <RAM_content<7>>.
+    Found 5-bit register for signal <RAM_content<8>>.
+    Found 5-bit register for signal <RAM_content<9>>.
+    Found 5-bit register for signal <RAM_content<10>>.
+    Found 5-bit register for signal <RAM_content<11>>.
+    Found 5-bit register for signal <RAM_content<12>>.
+    Found 5-bit register for signal <RAM_content<13>>.
+    Found 5-bit register for signal <RAM_content<14>>.
+    Found 5-bit register for signal <RAM_content<15>>.
+    Found 5-bit register for signal <RAM_content<16>>.
+    Found 5-bit register for signal <RAM_content<17>>.
+    Found 5-bit register for signal <RAM_content<18>>.
+    Found 5-bit register for signal <RAM_content<19>>.
+    Found 5-bit register for signal <RAM_content<20>>.
+    Found 5-bit register for signal <RAM_content<21>>.
+    Found 5-bit register for signal <RAM_content<22>>.
+    Found 5-bit register for signal <RAM_content<23>>.
+    Found 5-bit register for signal <RAM_content<24>>.
+    Found 5-bit register for signal <RAM_content<25>>.
+    Found 5-bit register for signal <RAM_content<26>>.
+    Found 5-bit register for signal <RAM_content<27>>.
+    Found 5-bit register for signal <RAM_content<28>>.
+    Found 5-bit register for signal <RAM_content<29>>.
+    Found 5-bit register for signal <RAM_content<30>>.
+    Found 5-bit register for signal <RAM_content<31>>.
+    Found 5-bit register for signal <RAM_content<32>>.
+    Found 5-bit register for signal <RAM_content<33>>.
+    Found 5-bit register for signal <RAM_content<34>>.
+    Found 5-bit register for signal <RAM_content<35>>.
+    Found 5-bit register for signal <RAM_content<36>>.
+    Found 5-bit register for signal <RAM_content<37>>.
+    Found 5-bit register for signal <RAM_content<38>>.
+    Found 5-bit register for signal <RAM_content<39>>.
+    Found 5-bit register for signal <RAM_content<40>>.
+    Found 5-bit register for signal <RAM_content<41>>.
+    Found 5-bit register for signal <RAM_content<42>>.
+    Found 5-bit register for signal <RAM_content<43>>.
+    Found 5-bit register for signal <RAM_content<44>>.
+    Found 5-bit register for signal <RAM_content<45>>.
+    Found 5-bit register for signal <RAM_content<46>>.
+    Found 5-bit register for signal <RAM_content<47>>.
+    Found 5-bit register for signal <RAM_content<48>>.
+    Found 5-bit register for signal <RAM_content<49>>.
+    Found 5-bit register for signal <RAM_content<50>>.
+    Found 5-bit register for signal <RAM_content<51>>.
+    Found 5-bit register for signal <RAM_content<52>>.
+    Found 5-bit register for signal <RAM_content<53>>.
+    Found 5-bit register for signal <RAM_content<54>>.
+    Found 5-bit register for signal <RAM_content<55>>.
+    Found 5-bit register for signal <RAM_content<56>>.
+    Found 5-bit register for signal <RAM_content<57>>.
+    Found 5-bit register for signal <RAM_content<58>>.
+    Found 5-bit register for signal <RAM_content<59>>.
+    Found 5-bit register for signal <RAM_content<60>>.
+    Found 5-bit register for signal <RAM_content<61>>.
+    Found 5-bit register for signal <RAM_content<62>>.
+    Found 5-bit register for signal <RAM_content<63>>.
+    Found 5-bit register for signal <RAM_content<64>>.
+    Found 5-bit register for signal <RAM_content<65>>.
+    Found 5-bit register for signal <RAM_content<66>>.
+    Found 5-bit register for signal <RAM_content<67>>.
+    Found 5-bit register for signal <RAM_content<68>>.
+    Found 5-bit register for signal <RAM_content<69>>.
+    Found 5-bit register for signal <RAM_content<70>>.
+    Found 5-bit register for signal <RAM_content<71>>.
+    Found 5-bit register for signal <RAM_content<72>>.
+    Found 5-bit register for signal <RAM_content<73>>.
+    Found 5-bit register for signal <RAM_content<74>>.
+    Found 5-bit register for signal <RAM_content<75>>.
+    Found 5-bit register for signal <RAM_content<76>>.
+    Found 5-bit register for signal <RAM_content<77>>.
+    Found 5-bit register for signal <RAM_content<78>>.
+    Found 5-bit register for signal <RAM_content<79>>.
+    Found 5-bit register for signal <RAM_content<80>>.
+    Found 5-bit register for signal <RAM_content<81>>.
+    Found 5-bit register for signal <RAM_content<82>>.
+    Found 5-bit register for signal <RAM_content<83>>.
+    Found 5-bit register for signal <RAM_content<84>>.
+    Found 5-bit register for signal <RAM_content<85>>.
+    Found 5-bit register for signal <RAM_content<86>>.
+    Found 5-bit register for signal <RAM_content<87>>.
+    Found 5-bit register for signal <RAM_content<88>>.
+    Found 5-bit register for signal <RAM_content<89>>.
+    Found 5-bit register for signal <RAM_content<90>>.
+    Found 5-bit register for signal <RAM_content<91>>.
+    Found 5-bit register for signal <RAM_content<92>>.
+    Found 5-bit register for signal <RAM_content<93>>.
+    Found 5-bit register for signal <RAM_content<94>>.
+    Found 5-bit register for signal <RAM_content<95>>.
+    Found 5-bit register for signal <RAM_content<96>>.
+    Found 5-bit register for signal <RAM_content<97>>.
+    Found 5-bit register for signal <RAM_content<98>>.
+    Found 5-bit register for signal <RAM_content<99>>.
+    Found 5-bit register for signal <RAM_content<100>>.
+    Found 5-bit register for signal <RAM_content<101>>.
+    Found 5-bit register for signal <RAM_content<102>>.
+    Found 5-bit register for signal <RAM_content<103>>.
+    Found 5-bit register for signal <RAM_content<104>>.
+    Found 5-bit register for signal <RAM_content<105>>.
+    Found 5-bit register for signal <RAM_content<106>>.
+    Found 5-bit register for signal <RAM_content<107>>.
+    Found 5-bit register for signal <RAM_content<108>>.
+    Found 5-bit register for signal <RAM_content<109>>.
+    Found 5-bit register for signal <RAM_content<110>>.
+    Found 5-bit register for signal <RAM_content<111>>.
+    Found 5-bit register for signal <RAM_content<112>>.
+    Found 5-bit register for signal <RAM_content<113>>.
+    Found 5-bit register for signal <RAM_content<114>>.
+    Found 5-bit register for signal <RAM_content<115>>.
+    Found 5-bit register for signal <RAM_content<116>>.
+    Found 5-bit register for signal <RAM_content<117>>.
+    Found 5-bit register for signal <RAM_content<118>>.
+    Found 5-bit register for signal <RAM_content<119>>.
+    Found 5-bit register for signal <RAM_content<120>>.
+    Found 5-bit register for signal <RAM_content<121>>.
+    Found 5-bit register for signal <RAM_content<122>>.
+    Found 5-bit register for signal <RAM_content<123>>.
+    Found 5-bit register for signal <RAM_content<124>>.
+    Found 5-bit register for signal <RAM_content<125>>.
+    Found 5-bit register for signal <RAM_content<126>>.
+    Found 5-bit register for signal <RAM_content<127>>.
+    Found 5-bit register for signal <RAM_content<128>>.
+    Found 5-bit register for signal <RAM_content<129>>.
+    Found 5-bit register for signal <RAM_content<130>>.
+    Found 5-bit register for signal <RAM_content<131>>.
+    Found 5-bit register for signal <RAM_content<132>>.
+    Found 5-bit register for signal <RAM_content<133>>.
+    Found 5-bit register for signal <RAM_content<134>>.
+    Found 5-bit register for signal <RAM_content<135>>.
+    Found 5-bit register for signal <RAM_content<136>>.
+    Found 5-bit register for signal <RAM_content<137>>.
+    Found 5-bit register for signal <RAM_content<138>>.
+    Found 5-bit register for signal <RAM_content<139>>.
+    Found 5-bit register for signal <RAM_content<140>>.
+    Found 5-bit register for signal <RAM_content<141>>.
+    Found 5-bit register for signal <RAM_content<142>>.
+    Found 5-bit register for signal <RAM_content<143>>.
+    Found 5-bit register for signal <RAM_content<144>>.
+    Found 5-bit register for signal <RAM_content<145>>.
+    Found 5-bit register for signal <RAM_content<146>>.
+    Found 5-bit register for signal <RAM_content<147>>.
+    Found 5-bit register for signal <RAM_content<148>>.
+    Found 5-bit register for signal <RAM_content<149>>.
+    Found 5-bit register for signal <RAM_content<150>>.
+    Found 5-bit register for signal <RAM_content<151>>.
+    Found 5-bit register for signal <RAM_content<152>>.
+    Found 5-bit register for signal <RAM_content<153>>.
+    Found 5-bit register for signal <RAM_content<154>>.
+    Found 5-bit register for signal <RAM_content<155>>.
+    Found 5-bit register for signal <RAM_content<156>>.
+    Found 5-bit register for signal <RAM_content<157>>.
+    Found 5-bit register for signal <RAM_content<158>>.
+    Found 5-bit register for signal <RAM_content<159>>.
+    Found 5-bit register for signal <RAM_content<160>>.
+    Found 5-bit register for signal <RAM_content<161>>.
+    Found 5-bit register for signal <RAM_content<162>>.
+    Found 5-bit register for signal <RAM_content<163>>.
+    Found 5-bit register for signal <RAM_content<164>>.
+    Found 5-bit register for signal <RAM_content<165>>.
+    Found 5-bit register for signal <RAM_content<166>>.
+    Found 5-bit register for signal <RAM_content<167>>.
+    Found 5-bit register for signal <RAM_content<168>>.
+    Found 5-bit register for signal <RAM_content<169>>.
+    Found 5-bit register for signal <RAM_content<170>>.
+    Found 5-bit register for signal <RAM_content<171>>.
+    Found 5-bit register for signal <RAM_content<172>>.
+    Found 5-bit register for signal <RAM_content<173>>.
+    Found 5-bit register for signal <RAM_content<174>>.
+    Found 5-bit register for signal <RAM_content<175>>.
+    Found 5-bit register for signal <RAM_content<176>>.
+    Found 5-bit register for signal <RAM_content<177>>.
+    Found 5-bit register for signal <RAM_content<178>>.
+    Found 5-bit register for signal <RAM_content<179>>.
+    Found 5-bit register for signal <RAM_content<180>>.
+    Found 5-bit register for signal <RAM_content<181>>.
+    Found 5-bit register for signal <RAM_content<182>>.
+    Found 5-bit register for signal <RAM_content<183>>.
+    Found 5-bit register for signal <RAM_content<184>>.
+    Found 5-bit register for signal <RAM_content<185>>.
+    Found 5-bit register for signal <RAM_content<186>>.
+    Found 5-bit register for signal <RAM_content<187>>.
+    Found 5-bit register for signal <RAM_content<188>>.
+    Found 5-bit register for signal <RAM_content<189>>.
+    Found 5-bit register for signal <RAM_content<190>>.
+    Found 5-bit register for signal <RAM_content<191>>.
+    Found 5-bit register for signal <RAM_content<192>>.
+    Found 5-bit register for signal <RAM_content<193>>.
+    Found 5-bit register for signal <RAM_content<194>>.
+    Found 5-bit register for signal <RAM_content<195>>.
+    Found 5-bit register for signal <RAM_content<196>>.
+    Found 5-bit register for signal <RAM_content<197>>.
+    Found 5-bit register for signal <RAM_content<198>>.
+    Found 5-bit register for signal <RAM_content<199>>.
+    Found 5-bit register for signal <RAM_content<200>>.
+    Found 5-bit register for signal <RAM_content<201>>.
+    Found 5-bit register for signal <RAM_content<202>>.
+    Found 5-bit register for signal <RAM_content<203>>.
+    Found 5-bit register for signal <RAM_content<204>>.
+    Found 5-bit register for signal <RAM_content<205>>.
+    Found 5-bit register for signal <RAM_content<206>>.
+    Found 5-bit register for signal <RAM_content<207>>.
+    Found 5-bit register for signal <RAM_content<208>>.
+    Found 5-bit register for signal <RAM_content<209>>.
+    Found 5-bit register for signal <RAM_content<210>>.
+    Found 5-bit register for signal <RAM_content<211>>.
+    Found 5-bit register for signal <RAM_content<212>>.
+    Found 5-bit register for signal <RAM_content<213>>.
+    Found 5-bit register for signal <RAM_content<214>>.
+    Found 5-bit register for signal <RAM_content<215>>.
+    Found 5-bit register for signal <RAM_content<216>>.
+    Found 5-bit register for signal <RAM_content<217>>.
+    Found 5-bit register for signal <RAM_content<218>>.
+    Found 5-bit register for signal <RAM_content<219>>.
+    Found 5-bit register for signal <RAM_content<220>>.
+    Found 5-bit register for signal <RAM_content<221>>.
+    Found 5-bit register for signal <RAM_content<222>>.
+    Found 5-bit register for signal <RAM_content<223>>.
+    Found 5-bit register for signal <RAM_content<224>>.
+    Found 5-bit register for signal <RAM_content<225>>.
+    Found 5-bit register for signal <RAM_content<226>>.
+    Found 5-bit register for signal <RAM_content<227>>.
+    Found 5-bit register for signal <RAM_content<228>>.
+    Found 5-bit register for signal <RAM_content<229>>.
+    Found 5-bit register for signal <RAM_content<230>>.
+    Found 5-bit register for signal <RAM_content<231>>.
+    Found 5-bit register for signal <RAM_content<232>>.
+    Found 5-bit register for signal <RAM_content<233>>.
+    Found 5-bit register for signal <RAM_content<234>>.
+    Found 5-bit register for signal <RAM_content<235>>.
+    Found 5-bit register for signal <RAM_content<236>>.
+    Found 5-bit register for signal <RAM_content<237>>.
+    Found 5-bit register for signal <RAM_content<238>>.
+    Found 5-bit register for signal <RAM_content<239>>.
+    Found 5-bit register for signal <RAM_content<240>>.
+    Found 5-bit register for signal <RAM_content<241>>.
+    Found 5-bit register for signal <RAM_content<242>>.
+    Found 5-bit register for signal <RAM_content<243>>.
+    Found 5-bit register for signal <RAM_content<244>>.
+    Found 5-bit register for signal <RAM_content<245>>.
+    Found 5-bit register for signal <RAM_content<246>>.
+    Found 5-bit register for signal <RAM_content<247>>.
+    Found 5-bit register for signal <RAM_content<248>>.
+    Found 5-bit register for signal <RAM_content<249>>.
+    Found 5-bit register for signal <RAM_content<250>>.
+    Found 5-bit register for signal <RAM_content<251>>.
+    Found 5-bit register for signal <RAM_content<252>>.
+    Found 5-bit register for signal <RAM_content<253>>.
+    Found 5-bit register for signal <RAM_content<254>>.
+    Found 5-bit register for signal <RAM_content<255>>.
+    Found 5-bit register for signal <RAM_content<256>>.
+    Found 5-bit register for signal <RAM_content<257>>.
+    Found 5-bit register for signal <RAM_content<258>>.
+    Found 5-bit register for signal <RAM_content<259>>.
+    Found 5-bit register for signal <RAM_content<260>>.
+    Found 5-bit register for signal <RAM_content<261>>.
+    Found 5-bit register for signal <RAM_content<262>>.
+    Found 5-bit register for signal <RAM_content<263>>.
+    Found 5-bit register for signal <RAM_content<264>>.
+    Found 5-bit register for signal <RAM_content<265>>.
+    Found 5-bit register for signal <RAM_content<266>>.
+    Found 5-bit register for signal <RAM_content<267>>.
+    Found 5-bit register for signal <RAM_content<268>>.
+    Found 5-bit register for signal <RAM_content<269>>.
+    Found 5-bit register for signal <RAM_content<270>>.
+    Found 5-bit register for signal <RAM_content<271>>.
+    Found 5-bit register for signal <RAM_content<272>>.
+    Found 5-bit register for signal <RAM_content<273>>.
+    Found 5-bit register for signal <RAM_content<274>>.
+    Found 5-bit register for signal <RAM_content<275>>.
+    Found 5-bit register for signal <RAM_content<276>>.
+    Found 5-bit register for signal <RAM_content<277>>.
+    Found 5-bit register for signal <RAM_content<278>>.
+    Found 5-bit register for signal <RAM_content<279>>.
+    Found 5-bit register for signal <RAM_content<280>>.
+    Found 5-bit register for signal <RAM_content<281>>.
+    Found 5-bit register for signal <RAM_content<282>>.
+    Found 5-bit register for signal <RAM_content<283>>.
+    Found 5-bit register for signal <RAM_content<284>>.
+    Found 5-bit register for signal <RAM_content<285>>.
+    Found 5-bit register for signal <RAM_content<286>>.
+    Found 5-bit register for signal <RAM_content<287>>.
+    Found 5-bit register for signal <RAM_content<288>>.
+    Found 5-bit register for signal <RAM_content<289>>.
+    Found 5-bit register for signal <RAM_content<290>>.
+    Found 5-bit register for signal <RAM_content<291>>.
+    Found 5-bit register for signal <RAM_content<292>>.
+    Found 5-bit register for signal <RAM_content<293>>.
+    Found 5-bit register for signal <RAM_content<294>>.
+    Found 5-bit register for signal <RAM_content<295>>.
+    Found 5-bit register for signal <RAM_content<296>>.
+    Found 5-bit register for signal <RAM_content<297>>.
+    Found 5-bit register for signal <RAM_content<298>>.
+    Found 5-bit register for signal <RAM_content<299>>.
+    Found 5-bit register for signal <RAM_content<0>>.
+INFO:Xst:3019 - HDL ADVISOR - 2560 flip-flops were inferred for signal <RAM_content>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Found 5-bit 300-to-1 multiplexer for signal <addr_read[8]_X_51_o_wide_mux_1503_OUT> created at line 52.
+    Found 9-bit comparator greater for signal <addr_write[8]_PWR_58_o_LessThan_1_o> created at line 44
+    Found 9-bit comparator greater for signal <addr_read[8]_PWR_58_o_LessThan_1503_o> created at line 52
+    Summary:
+	inferred 1500 D-type flip-flop(s).
+	inferred   2 Comparator(s).
+	inferred   2 Multiplexer(s).
+Unit <RAM_3> synthesized.
+
+Synthesizing Unit <VGA_motor>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/VGA_motor/VGA_motor.vhd".
+    Found 10-bit register for signal <pixel_x>.
+    Found 10-bit register for signal <pixel_y>.
+    Found 8-bit register for signal <color>.
+    Found 2-bit register for signal <clk_div>.
+    Found 2-bit adder for signal <clk_div[1]_GND_57_o_add_0_OUT> created at line 1241.
+    Found 10-bit adder for signal <pixel_x[9]_GND_57_o_add_5_OUT> created at line 1241.
+    Found 10-bit adder for signal <pixel_y[9]_GND_57_o_add_13_OUT> created at line 1241.
+    Found 10-bit comparator lessequal for signal <n0019> created at line 90
+    Found 10-bit comparator greater for signal <pixel_x[9]_PWR_60_o_LessThan_22_o> created at line 90
+    Found 10-bit comparator lessequal for signal <n0023> created at line 94
+    Found 10-bit comparator greater for signal <pixel_y[9]_GND_57_o_LessThan_24_o> created at line 94
+    Found 10-bit comparator greater for signal <PWR_60_o_pixel_x[9]_LessThan_25_o> created at line 98
+    Found 10-bit comparator greater for signal <GND_57_o_pixel_y[9]_LessThan_26_o> created at line 98
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  30 D-type flip-flop(s).
+	inferred   6 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <VGA_motor> synthesized.
+
+Synthesizing Unit <RAM_4>.
+    Related source file is "/edu/felli675/tsea93-guitar-hero/processor/RAM/RAM.vhd".
+        addr_width = 1
+        data_width = 1
+        length = 1
+    Found 1-bit register for signal <RAM_content<0>>.
+    Found 1-bit comparator greater for signal <addr_read[0]_PWR_61_o_LessThan_3_o> created at line 52
+    Summary:
+	inferred   1 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+	inferred   1 Multiplexer(s).
+Unit <RAM_4> synthesized.
+RTL-Simplification CPUSTAT: 0.66 
+RTL-BasicInf CPUSTAT: 2.54 
+RTL-BasicOpt CPUSTAT: 0.02 
+RTL-Remain-Bus CPUSTAT: 0.03 
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 6
+ 128x32-bit single-port Read Only RAM                  : 1
+ 2048x8-bit single-port Read Only RAM                  : 1
+ 512x8-bit single-port Read Only RAM                   : 1
+ 64x1-bit single-port Read Only RAM                    : 1
+ 64x4-bit single-port Read Only RAM                    : 1
+ 8x12-bit single-port Read Only RAM                    : 1
+# Multipliers                                          : 3
+ 16x16-bit multiplier                                  : 2
+ 5x4-bit multiplier                                    : 1
+# Adders/Subtractors                                   : 84
+ 10-bit adder                                          : 3
+ 10-bit subtractor                                     : 9
+ 12-bit adder                                          : 1
+ 12-bit subtractor                                     : 2
+ 16-bit adder                                          : 1
+ 17-bit adder                                          : 1
+ 17-bit subtractor                                     : 1
+ 2-bit adder                                           : 1
+ 8-bit subtractor                                      : 64
+ 9-bit adder                                           : 1
+# Registers                                            : 580
+ 1-bit register                                        : 7
+ 10-bit register                                       : 38
+ 12-bit register                                       : 1
+ 14-bit register                                       : 1
+ 16-bit register                                       : 130
+ 2-bit register                                        : 1
+ 3-bit register                                        : 33
+ 32-bit register                                       : 3
+ 5-bit register                                        : 300
+ 8-bit register                                        : 65
+ 9-bit register                                        : 1
+# Latches                                              : 32
+ 1-bit latch                                           : 32
+# Comparators                                          : 101
+ 1-bit comparator greater                              : 2
+ 10-bit comparator greater                             : 6
+ 10-bit comparator lessequal                           : 17
+ 12-bit comparator lessequal                           : 3
+ 16-bit comparator greater                             : 1
+ 8-bit comparator equal                                : 6
+ 8-bit comparator greater                              : 64
+ 9-bit comparator greater                              : 2
+# Multiplexers                                         : 395
+ 1-bit 13-to-1 multiplexer                             : 16
+ 1-bit 2-to-1 multiplexer                              : 173
+ 1-bit 4-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 123
+ 10-bit 32-to-1 multiplexer                            : 2
+ 16-bit 127-to-1 multiplexer                           : 1
+ 16-bit 2-to-1 multiplexer                             : 9
+ 5-bit 2-to-1 multiplexer                              : 1
+ 5-bit 300-to-1 multiplexer                            : 1
+ 8-bit 2-to-1 multiplexer                              : 5
+ 9-bit 2-to-1 multiplexer                              : 63
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# Xors                                                 : 1
+ 16-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <VGA_motor>.
+The following registers are absorbed into counter <clk_div>: 1 register on signal <clk_div>.
+The following registers are absorbed into counter <pixel_x>: 1 register on signal <pixel_x>.
+The following registers are absorbed into counter <pixel_y>: 1 register on signal <pixel_y>.
+Unit <VGA_motor> synthesized (advanced).
+
+Synthesizing (advanced) Unit <audio_map_mem>.
+INFO:Xst:3048 - The small RAM <Mram_audio_mem_content> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 8-word x 12-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <audio_index>   |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <audio_map_mem> synthesized (advanced).
+
+Synthesizing (advanced) Unit <audio_motor>.
+The following registers are absorbed into counter <inner_counter>: 1 register on signal <inner_counter>.
+The following registers are absorbed into counter <outer_counter>: 1 register on signal <outer_counter>.
+Unit <audio_motor> synthesized (advanced).
+
+Synthesizing (advanced) Unit <pipeCPU>.
+INFO:Xst:3048 - The small RAM <Mram_REG_we_1> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 1-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <IR3<31:26>>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <REG_we_1>      |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3048 - The small RAM <Mram_ALU_OP> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 64-word x 4-bit                     |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <IR2<31:26>>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <ALU_OP>        |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3040 - The RAM <U1/Mram_data_out> will be implemented as a BLOCK RAM, absorbing the following register(s): <IR1>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 128-word x 32-bit                   |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <PC<6:0>>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <IR1>           |          |
+    |     dorstA         | connected to signal <rst_0>         | high     |
+    | reset value        | 00000000000000000000000000000000               |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <pipeCPU> synthesized (advanced).
+
+Synthesizing (advanced) Unit <sprite_pic_mem>.
+INFO:Xst:3040 - The RAM <U0/Mram_sprite_mem_content> will be implemented as a BLOCK RAM, absorbing the following register(s): <sprite_mem_index>
+    -----------------------------------------------------------------------
+    | ram_type           | Block                               |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 512-word x 8-bit                    |          |
+    |     mode           | write-first                         |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <GND_51_o_GND_51_o_mux_609_OUT> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <sprite_mem_color> |          |
+    -----------------------------------------------------------------------
+    | optimization       | speed                               |          |
+    -----------------------------------------------------------------------
+Unit <sprite_pic_mem> synthesized (advanced).
+
+Synthesizing (advanced) Unit <tile_mem>.
+INFO:Xst:3031 - HDL ADVISOR - The RAM <Mram_tile_mem_content> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 2048-word x 8-bit                   |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <index>         |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <tile_mem> synthesized (advanced).
+
+Synthesizing (advanced) Unit <tile_pic_mem>.
+	Multiplier <Mmult_n0016> in block <tile_pic_mem> and adder/subtractor <Madd_tile_addr_read> in block <tile_pic_mem> are combined into a MAC<Maddsub_n0016>.
+Unit <tile_pic_mem> synthesized (advanced).
+WARNING:Xst:2677 - Node <IR3_10> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <IR3_11> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <IR3_12> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <IR3_13> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <IR3_14> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <IR3_15> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <IR3_16> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <IR3_17> of sequential type is unconnected in block <pipeCPU>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 6
+ 128x32-bit single-port block Read Only RAM            : 1
+ 2048x8-bit single-port distributed Read Only RAM      : 1
+ 512x8-bit single-port block Read Only RAM             : 1
+ 64x1-bit single-port distributed Read Only RAM        : 1
+ 64x4-bit single-port distributed Read Only RAM        : 1
+ 8x12-bit single-port distributed Read Only RAM        : 1
+# MACs                                                 : 1
+ 5x4-to-9-bit MAC                                      : 1
+# Multipliers                                          : 2
+ 16x16-bit multiplier                                  : 2
+# Adders/Subtractors                                   : 78
+ 10-bit adder                                          : 1
+ 10-bit subtractor                                     : 9
+ 12-bit subtractor                                     : 2
+ 17-bit adder                                          : 1
+ 17-bit subtractor                                     : 1
+ 8-bit subtractor                                      : 64
+# Counters                                             : 5
+ 10-bit up counter                                     : 2
+ 12-bit up counter                                     : 1
+ 16-bit up counter                                     : 1
+ 2-bit up counter                                      : 1
+# Registers                                            : 4620
+ Flip-Flops                                            : 4620
+# Comparators                                          : 101
+ 1-bit comparator greater                              : 2
+ 10-bit comparator greater                             : 6
+ 10-bit comparator lessequal                           : 17
+ 12-bit comparator lessequal                           : 3
+ 16-bit comparator greater                             : 1
+ 8-bit comparator equal                                : 6
+ 8-bit comparator greater                              : 64
+ 9-bit comparator greater                              : 2
+# Multiplexers                                         : 641
+ 1-bit 13-to-1 multiplexer                             : 16
+ 1-bit 2-to-1 multiplexer                              : 450
+ 1-bit 4-to-1 multiplexer                              : 1
+ 10-bit 2-to-1 multiplexer                             : 123
+ 10-bit 32-to-1 multiplexer                            : 2
+ 16-bit 127-to-1 multiplexer                           : 1
+ 16-bit 2-to-1 multiplexer                             : 9
+ 5-bit 2-to-1 multiplexer                              : 1
+ 5-bit 300-to-1 multiplexer                            : 1
+ 8-bit 2-to-1 multiplexer                              : 5
+ 9-bit 2-to-1 multiplexer                              : 32
+# Logic shifters                                       : 2
+ 16-bit shifter logical left                           : 1
+ 16-bit shifter logical right                          : 1
+# Xors                                                 : 1
+ 16-bit xor2                                           : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:2677 - Node <PC_7> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <PC_8> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <PC_9> of sequential type is unconnected in block <pipeCPU>.
+
+Optimizing unit <pipeCPU> ...
+
+Optimizing unit <REG> ...
+
+Optimizing unit <ALU> ...
+
+Optimizing unit <AD> ...
+
+Optimizing unit <RAM_1> ...
+
+Optimizing unit <audio_motor> ...
+
+Optimizing unit <sprite_pic_mem> ...
+
+Optimizing unit <RAM_3> ...
+
+Optimizing unit <VGA_motor> ...
+WARNING:Xst:2677 - Node <U3/C> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/H_15> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/H_14> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/H_13> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/H_12> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/H_11> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/H_10> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/R_26> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/R_27> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/R_29> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/R_30> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/R_28> of sequential type is unconnected in block <pipeCPU>.
+WARNING:Xst:2677 - Node <U3/V> of sequential type is unconnected in block <pipeCPU>.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 0) on block pipeCPU, actual ratio is 89.
+WARNING:Xst:2957 - There are clock and non-clock loads on clock signal clk_BUFGP. This is not a recommended design practice, that may cause excessive delay, skew or unroutable situations.
+FlipFlop IR3_27 has been replicated 1 time(s)
+FlipFlop IR3_28 has been replicated 1 time(s)
+FlipFlop IR3_29 has been replicated 1 time(s)
+FlipFlop IR3_30 has been replicated 1 time(s)
+FlipFlop IR3_31 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 4664
+ Flip-Flops                                            : 4664
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : design.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 5522
+#      GND                         : 1
+#      INV                         : 12
+#      LUT1                        : 46
+#      LUT2                        : 575
+#      LUT3                        : 328
+#      LUT4                        : 149
+#      LUT5                        : 280
+#      LUT6                        : 2849
+#      MUXCY                       : 565
+#      MUXF7                       : 95
+#      VCC                         : 1
+#      XORCY                       : 621
+# FlipFlops/Latches                : 4691
+#      FD                          : 352
+#      FDE                         : 26
+#      FDR                         : 109
+#      FDRE                        : 4177
+#      LD                          : 27
+# RAMS                             : 2
+#      RAMB16BWER                  : 1
+#      RAMB8BWER                   : 1
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 14
+#      IBUF                        : 3
+#      OBUF                        : 11
+# DSPs                             : 2
+#      DSP48A1                     : 2
+# Others                           : 2
+#      kb_enc                      : 1
+#      kb_mem                      : 1
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:            4691  out of  18224    25%  
+ Number of Slice LUTs:                 4239  out of   9112    46%  
+    Number used as Logic:              4239  out of   9112    46%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   7481
+   Number with an unused Flip Flop:    2790  out of   7481    37%  
+   Number with an unused LUT:          3242  out of   7481    43%  
+   Number of fully used LUT-FF pairs:  1449  out of   7481    19%  
+   Number of unique control sets:       517
+
+IO Utilization: 
+ Number of IOs:                          15
+ Number of bonded IOBs:                  15  out of    232     6%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                2  out of     32     6%  
+    Number using Block RAM only:          2
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+ Number of DSP48A1s:                      2  out of     32     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 4666  |
+U3/_n0259<1>(U3/_n0259<1>1:O)      | NONE(*)(U3/R_16)       | 1     |
+U3/_n0259<0>(U3/_n0259<2>1:O)      | NONE(*)(U3/R_17)       | 10    |
+U3/_n0259<2>(U3/_n0259<0>1:O)      | NONE(*)(U3/R_0)        | 16    |
+-----------------------------------+------------------------+-------+
+(*) These 3 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 13.904ns (Maximum Frequency: 71.923MHz)
+   Minimum input arrival time before clock: 7.455ns
+   Maximum output required time after clock: 9.053ns
+   Maximum combinational path delay: 4.282ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 13.904ns (frequency: 71.923MHz)
+  Total number of paths / destination ports: 4063992 / 8887
+-------------------------------------------------------------------------
+Delay:               13.904ns (Levels of Logic = 8)
+  Source:            IR3_27_1 (FF)
+  Destination:       U4/U0/RAM_content_126_15 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: IR3_27_1 to U4/U0/RAM_content_126_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              1   0.447   0.924  IR3_27_1 (IR3_27_1)
+     LUT5:I0->O           41   0.203   1.420  GND_4_o_IR3[31]_equal_159_o<31>11 (AD_write)
+     LUT4:I3->O           30   0.205   1.492  AD_addr_write<5>1 (AD_addr_write<5>)
+     LUT6:I3->O            8   0.205   0.803  U4/Msub_GND_44_o_GND_44_o_sub_7_OUT<9:0>_cy<6>1 (U4/Msub_GND_44_o_GND_44_o_sub_7_OUT<9:0>_cy<6>)
+     LUT4:I3->O           12   0.205   0.909  U4/CS_DM_write11 (U4/CS_DM_write)
+     LUT4:I3->O          268   0.205   2.296  U4/Mmux_DM_addr_write41 (U4/DM_addr_write<3>)
+     LUT6:I3->O            1   0.205   0.580  U4/U0/_n1728_inv14_SW0 (N619)
+     LUT6:I5->O          282   0.205   2.070  U4/U0/_n1728_inv14 (U4/U0/N3)
+     LUT5:I4->O           16   0.205   1.004  U4/U0/_n2050_inv1 (U4/U0/_n2050_inv)
+     FDRE:CE                   0.322          U4/U0/RAM_content_110_0
+    ----------------------------------------
+    Total                     13.904ns (2.407ns logic, 11.497ns route)
+                                       (17.3% logic, 82.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 4625 / 4625
+-------------------------------------------------------------------------
+Offset:              6.024ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       U4/U2/U2/inner_counter_0 (FF)
+  Destination Clock: clk rising
+
+  Data Path: rst to U4/U2/U2/inner_counter_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          4556   1.222   3.165  rst_IBUF (rst_IBUF)
+     LUT4:I2->O           16   0.203   1.004  U4/U2/U2/Mcount_inner_counter_val1 (U4/U2/U2/Mcount_inner_counter_val)
+     FDR:R                     0.430          U4/U2/U2/inner_counter_0
+    ----------------------------------------
+    Total                      6.024ns (1.855ns logic, 4.169ns route)
+                                       (30.8% logic, 69.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'U3/_n0259<1>'
+  Total number of paths / destination ports: 6 / 1
+-------------------------------------------------------------------------
+Offset:              7.414ns (Levels of Logic = 5)
+  Source:            U4/U1/U1:data_read<0> (PAD)
+  Destination:       U3/R_16 (LATCH)
+  Destination Clock: U3/_n0259<1> falling
+
+  Data Path: U4/U1/U1:data_read<0> to U3/R_16
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    kb_mem:data_read<0>    1   0.000   0.827  U4/U1/U1 (U4/KBM_read<0>)
+     LUT6:I2->O            3   0.203   0.651  Mmux_ALU_A23 (Mmux_ALU_A21)
+     LUT5:I4->O           11   0.205   0.882  Mmux_ALU_A25 (ALU_A<0>)
+     DSP48A1:A0->M16       1   2.835   0.684  U3/Mmult_A[15]_B[15]_MuLt_2_OUT (U3/A[15]_B[15]_MuLt_2_OUT<16>)
+     LUT6:I4->O            1   0.203   0.684  U3/Mmux_OP[3]_R[16]_Mux_40_o21 (U3/Mmux_OP[3]_R[16]_Mux_40_o2)
+     LUT5:I3->O            1   0.203   0.000  U3/Mmux_OP[3]_R[16]_Mux_40_o22 (U3/OP[3]_R[16]_Mux_40_o)
+     LD:D                      0.037          U3/R_16
+    ----------------------------------------
+    Total                      7.414ns (3.686ns logic, 3.728ns route)
+                                       (49.7% logic, 50.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'U3/_n0259<0>'
+  Total number of paths / destination ports: 20 / 10
+-------------------------------------------------------------------------
+Offset:              6.767ns (Levels of Logic = 4)
+  Source:            U4/U1/U1:data_read<0> (PAD)
+  Destination:       U3/R_17 (LATCH)
+  Destination Clock: U3/_n0259<0> falling
+
+  Data Path: U4/U1/U1:data_read<0> to U3/R_17
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    kb_mem:data_read<0>    1   0.000   0.827  U4/U1/U1 (U4/KBM_read<0>)
+     LUT6:I2->O            3   0.203   0.651  Mmux_ALU_A23 (Mmux_ALU_A21)
+     LUT5:I4->O           11   0.205   0.882  Mmux_ALU_A25 (ALU_A<0>)
+     DSP48A1:A0->M22       1   2.835   0.924  U3/Mmult_A[15]_B[15]_MuLt_3_OUT (U3/A[15]_B[15]_MuLt_3_OUT<22>)
+     LUT6:I1->O            1   0.203   0.000  U3/Mmux_OP[3]_R[22]_Mux_28_o11 (U3/OP[3]_R[22]_Mux_28_o)
+     LD:D                      0.037          U3/R_22
+    ----------------------------------------
+    Total                      6.767ns (3.483ns logic, 3.284ns route)
+                                       (51.5% logic, 48.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'U3/_n0259<2>'
+  Total number of paths / destination ports: 114 / 16
+-------------------------------------------------------------------------
+Offset:              7.455ns (Levels of Logic = 5)
+  Source:            U4/U1/U1:data_read<0> (PAD)
+  Destination:       U3/R_0 (LATCH)
+  Destination Clock: U3/_n0259<2> falling
+
+  Data Path: U4/U1/U1:data_read<0> to U3/R_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+    kb_mem:data_read<0>    1   0.000   0.827  U4/U1/U1 (U4/KBM_read<0>)
+     LUT6:I2->O            3   0.203   0.651  Mmux_ALU_A23 (Mmux_ALU_A21)
+     LUT5:I4->O           11   0.205   0.882  Mmux_ALU_A25 (ALU_A<0>)
+     DSP48A1:A0->M4        1   2.835   0.580  U3/Mmult_A[15]_B[15]_MuLt_3_OUT (U3/A[15]_B[15]_MuLt_3_OUT<4>)
+     LUT5:I4->O            1   0.205   0.827  U3/Mmux_OP[3]_R[4]_Mux_64_o_7 (U3/Mmux_OP[3]_R[4]_Mux_64_o_7)
+     LUT6:I2->O            1   0.203   0.000  U3/OP<3>111 (U3/OP[3]_R[4]_Mux_64_o)
+     LD:D                      0.037          U3/R_4
+    ----------------------------------------
+    Total                      7.455ns (3.688ns logic, 3.767ns route)
+                                       (49.5% logic, 50.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 904 / 14
+-------------------------------------------------------------------------
+Offset:              9.053ns (Levels of Logic = 15)
+  Source:            U4/U2/U0/RAM_content_0_2 (FF)
+  Destination:       audio_output (PAD)
+  Source Clock:      clk rising
+
+  Data Path: U4/U2/U0/RAM_content_0_2 to audio_output
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q            25   0.447   1.421  U4/U2/U0/RAM_content_0_2 (U4/U2/U0/RAM_content_0_2)
+     LUT3:I0->O            1   0.205   0.000  U4/U2/U1/Mram_audio_mem_content113 (U4/U2/U1/Mram_audio_mem_content112)
+     MUXCY:S->O            1   0.172   0.000  U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<0> (U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<1> (U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<2> (U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<3> (U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<4> (U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<5> (U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<6> (U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<7> (U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_cy<7>)
+     XORCY:CI->O           2   0.180   0.864  U4/U2/U2/Msub_GND_50_o_GND_50_o_sub_13_OUT<11:0>_xor<8> (U4/U2/U2/GND_50_o_GND_50_o_sub_13_OUT<8>)
+     LUT4:I0->O            1   0.203   0.000  U4/U2/U2/Mcompar_GND_50_o_outer_counter[11]_LessThan_14_o_lut<4> (U4/U2/U2/Mcompar_GND_50_o_outer_counter[11]_LessThan_14_o_lut<4>)
+     MUXCY:S->O            1   0.366   0.580  U4/U2/U2/Mcompar_GND_50_o_outer_counter[11]_LessThan_14_o_cy<4> (U4/U2/U2/Mcompar_GND_50_o_outer_counter[11]_LessThan_14_o_cy<4>)
+     LUT5:I4->O            1   0.205   0.924  U4/U2/U2/Mcompar_GND_50_o_outer_counter[11]_LessThan_14_o_cy<5> (U4/U2/U2/GND_50_o_outer_counter[11]_LessThan_14_o)
+     LUT5:I0->O            1   0.203   0.579  U4/U2/U2/output3 (audio_output_OBUF)
+     OBUF:I->O                 2.571          audio_output_OBUF (audio_output)
+    ----------------------------------------
+    Total                      9.053ns (4.685ns logic, 4.367ns route)
+                                       (51.8% logic, 48.2% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Delay:               4.282ns (Levels of Logic = 1)
+  Source:            rst (PAD)
+  Destination:       U4/U1/U1:rst (PAD)
+
+  Data Path: rst to U4/U1/U1:rst
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O          4556   1.222   3.060  rst_IBUF (rst_IBUF)
+    kb_enc:rst                 0.000          U4/U1/U0
+    ----------------------------------------
+    Total                      4.282ns (1.222ns logic, 3.060ns route)
+                                       (28.5% logic, 71.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock U3/_n0259<0>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |   18.803|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock U3/_n0259<1>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |   19.450|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock U3/_n0259<2>
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |         |         |   19.491|         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+U3/_n0259<0>   |         |    1.385|         |         |
+U3/_n0259<1>   |         |    1.179|         |         |
+U3/_n0259<2>   |         |    4.038|         |         |
+clk            |   13.904|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 65.00 secs
+Total CPU time to Xst completion: 60.11 secs
+ 
+--> 
+
+
+Total memory usage is 580452 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  108 (   0 filtered)
+Number of infos    :   11 (   0 filtered)
+
+mkdir -p proj-synthdir/synth
+cp proj-synthdir/xst/synth/design.ngc proj-synthdir/synth/design.ngc
+
+*** Producing NGD file ***
+
+rm -rf proj-synthdir/layoutdefault/_ngo
+mkdir -p proj-synthdir/layoutdefault/_ngo
+if [ "pipeCPU.ucf" == "" ]; then \
+		cd proj-synthdir/layoutdefault; source /sw/xilinx/ise_12.4i/ISE_DS/settings64.sh; ngdbuild -sd . -dd _ngo -nt timestamp -p xc6slx16-3-csg324 ../synth/design.ngc  design.ngd;\
+	else \
+		cd proj-synthdir/layoutdefault; source /sw/xilinx/ise_12.4i/ISE_DS/settings64.sh; ngdbuild -sd . -dd _ngo -nt timestamp -p xc6slx16-3-csg324 -uc ../../pipeCPU.ucf ../synth/design.ngc  design.ngd;\
+	fi
+. /sw/xilinx/ise_12.4i/ISE_DS/EDK/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/EDK
+. /sw/xilinx/ise_12.4i/ISE_DS/ISE/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/ISE
+. /sw/xilinx/ise_12.4i/ISE_DS/PlanAhead/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/PlanAhead
+. /sw/xilinx/ise_12.4i/ISE_DS/common/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/common
+Release 12.4 - ngdbuild M.81d (lin64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Command Line: /sw/xilinx/ise_12.4i/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -sd .
+-dd _ngo -nt timestamp -p xc6slx16-3-csg324 -uc ../../pipeCPU.ucf
+../synth/design.ngc design.ngd
+
+Reading NGO file
+"/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/synth/design.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "../../pipeCPU.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+ERROR:NgdBuild:604 - logical block 'U4/U1/U1' with type 'kb_mem' could not be
+   resolved. A pin name misspelling can cause this, a missing edif or ngc file,
+   case mismatch between the block name and the edif or ngc file name, or the
+   misspelling of a type name. Symbol 'kb_mem' is not supported in target
+   'spartan6'.
+ERROR:NgdBuild:604 - logical block 'U4/U1/U0' with type 'kb_enc' could not be
+   resolved. A pin name misspelling can cause this, a missing edif or ngc file,
+   case mismatch between the block name and the edif or ngc file name, or the
+   misspelling of a type name. Symbol 'kb_enc' is not supported in target
+   'spartan6'.
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     2
+  Number of warnings:   0
+
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   5 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
+
+Writing NGDBUILD log file "design.bld"...
+make[1]: Leaving directory `/edu/felli675/tsea93-guitar-hero/processor'

@@ -1,0 +1,12 @@
+2 arg ops:
+lsl
+lsr
+inc
+
+jump args:
+brne
+beq
+jmp
+bmi
+
+

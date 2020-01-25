@@ -1,0 +1,13 @@
+# emacs
+*~
+
+# ghdl
+*.o
+*.cf
+
+# python
+__pycache__
+
+# synth memes
+*simdir
+*synthdir

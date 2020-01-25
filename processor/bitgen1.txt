@@ -1,0 +1,70 @@
+
+   *** Important settings for the Xilinx Backend module ***
+
+   Synthesis top module: pipeCPU
+   FPGA part (PART): xc6slx16-3-csg324
+   Constraints file: pipeCPU.ucf
+
+nice -n 19 make -f Makefile proj-synthdir/layoutdefault/design.bit PROJNAME="proj" S="pipeCPU.vhd PM/PM.vhd ALU/ALU.vhd registers/REG.vhd tile_pic_mem/tile_pic_mem.vhd tile_mem/tile_mem.vhd RAM/RAM.vhd audio/audio.vhd audio_map_mem/audio_map_mem.vhd audio_motor/audio_motor.vhd kb_enc/kb_unit.vhd sprite_pic_mem/sprite_pic_mem.vhd VGA_motor/VGA_motor.vhd AD/AD.vhd sprite_mem/sprite_mem.vhd kb_enc/kb_mem.vhd kb_enc/kb_enc.vhd " U="pipeCPU.ucf" XST_OPT="" PART="xc6slx16-3-csg324" INCDIRS=""
+make[1]: Entering directory `/edu/felli675/tsea93-guitar-hero/processor'
+
+*** Producing NGD file ***
+
+rm -rf proj-synthdir/layoutdefault/_ngo
+mkdir -p proj-synthdir/layoutdefault/_ngo
+if [ "pipeCPU.ucf" == "" ]; then \
+		cd proj-synthdir/layoutdefault; source /sw/xilinx/ise_12.4i/ISE_DS/settings64.sh; ngdbuild -sd . -dd _ngo -nt timestamp -p xc6slx16-3-csg324 ../synth/design.ngc  design.ngd;\
+	else \
+		cd proj-synthdir/layoutdefault; source /sw/xilinx/ise_12.4i/ISE_DS/settings64.sh; ngdbuild -sd . -dd _ngo -nt timestamp -p xc6slx16-3-csg324 -uc ../../pipeCPU.ucf ../synth/design.ngc  design.ngd;\
+	fi
+. /sw/xilinx/ise_12.4i/ISE_DS/EDK/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/EDK
+. /sw/xilinx/ise_12.4i/ISE_DS/ISE/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/ISE
+. /sw/xilinx/ise_12.4i/ISE_DS/PlanAhead/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/PlanAhead
+. /sw/xilinx/ise_12.4i/ISE_DS/common/settings64.sh /sw/xilinx/ise_12.4i/ISE_DS/common
+Release 12.4 - ngdbuild M.81d (lin64)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+Command Line: /sw/xilinx/ise_12.4i/ISE_DS/ISE/bin/lin64/unwrapped/ngdbuild -sd .
+-dd _ngo -nt timestamp -p xc6slx16-3-csg324 -uc ../../pipeCPU.ucf
+../synth/design.ngc design.ngd
+
+Reading NGO file
+"/edu/felli675/tsea93-guitar-hero/processor/proj-synthdir/synth/design.ngc" ...
+Gathering constraint information from source properties...
+Done.
+
+Annotating constraints to design from ucf file "../../pipeCPU.ucf" ...
+Resolving constraint associations...
+Checking Constraint Associations...
+Done...
+
+Checking expanded design ...
+ERROR:NgdBuild:604 - logical block 'U4/U1/U1' with type 'kb_mem' could not be
+   resolved. A pin name misspelling can cause this, a missing edif or ngc file,
+   case mismatch between the block name and the edif or ngc file name, or the
+   misspelling of a type name. Symbol 'kb_mem' is not supported in target
+   'spartan6'.
+ERROR:NgdBuild:604 - logical block 'U4/U1/U0' with type 'kb_enc' could not be
+   resolved. A pin name misspelling can cause this, a missing edif or ngc file,
+   case mismatch between the block name and the edif or ngc file name, or the
+   misspelling of a type name. Symbol 'kb_enc' is not supported in target
+   'spartan6'.
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGDBUILD Design Results Summary:
+  Number of errors:     2
+  Number of warnings:   0
+
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   4 sec
+
+One or more errors were found during NGDBUILD.  No NGD file will be written.
+
+Writing NGDBUILD log file "design.bld"...
+make[1]: Leaving directory `/edu/felli675/tsea93-guitar-hero/processor'
